@@ -239,10 +239,14 @@ export default function GetStartedPage() {
                 </label>
               </div>
 
-              <label className="inline-flex items-center gap-2 text-sm">
-                <input type="checkbox" {...register('')} />
-                I  to the <a className="underline" href="/legal/terms" target="_blank">Terms and Conditions</a>
-              </label>
+ <label className="inline-flex items-center gap-2 text-sm">
+  <input type="checkbox" {...register("agree")} />
+  I agree to the{" "}
+  <a className="underline" href="/legal/terms" target="_blank">
+    Terms and Conditions
+  </a>
+</label>
+
 
               <button type="submit" disabled={!isValid} className={clsx('btn-primary w-full', !isValid && 'opacity-50 cursor-not-allowed')}>Submit</button>
               {!isValid && (<p className="text-xs text-black/60">All fields are required to submit this form. Click the submit button to highlight which fields are not complete.</p>)}
