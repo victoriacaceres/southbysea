@@ -9,14 +9,16 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.png" },
 };
 
-const nav = [
+type NavItem = { href: string; label: string; external?: boolean };
+
+const nav: NavItem[] = [
   { href: "/get-started", label: "Get Started" },
   { href: "/browse-designs", label: "Browse Designs" },
   { href: "/browse-products", label: "Browse Products" },
   { href: "/decoration-options", label: "Browse Decoration Options" },
   { href: "/work-for-us", label: "Work for Us" },
   { href: "https://shop.southbysea.com/", label: "Shop Retail", external: true },
-] as const;
+];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
