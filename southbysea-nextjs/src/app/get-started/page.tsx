@@ -21,28 +21,37 @@ const FormSchema = z.object({
   backDesign: z.string().min(1).max(2000),
   extraInfo: z.string().min(1).max(2000),
   event: z.string().min(1).max(150),
-  organization: z.enum(['Alpha Chi Omega','Zeta Tau Alpha','Other']),
+  organization: z.enum(["Alpha Chi Omega","Zeta Tau Alpha","Other"]),
   organizationOther: z.string().max(150).optional(),
-  school: z.enum(['Georgia Southern University','Other']),
+  school: z.enum(["Georgia Southern University","Other"]),
   schoolOther: z.string().max(150).optional(),
-  deliveryType: z.enum(['One Group Shipment','Multiple Individual Shipments','Group and Individual Shipments']),
-  budgetPerItem: z.string().regex(/^\d{1,10}(?:\.\d{0,2})?$/, 'Enter a valid amount'),
-  estQty: z.string().regex(/^\d{1,10}$/,'Numbers only'),
+  deliveryType: z.enum(["One Group Shipment","Multiple Individual Shipments","Group and Individual Shipments"]),
+  budgetPerItem: z.string().regex(/^\d{1,10}(?:\.\d{0,2})?$/, "Enter a valid amount"),
+  estQty: z.string().regex(/^\d{1,10}$/, "Numbers only"),
   needBy: z.string(),
   manualAddress: z.boolean().optional(),
-  address: z.object({ line1:z.string().optional(), line2:z.string().optional(), city:z.string().optional(), state:z.string().optional(), zip:z.string().optional(), }).optional(),
+  address: z.object({
+    line1: z.string().optional(),
+    line2: z.string().optional(),
+    city: z.string().optional(),
+    state: z.string().optional(),
+    zip: z.string().optional(),
+  }).optional(),
   firstName: z.string().min(1).max(150),
   lastName: z.string().min(1).max(150),
   email: z.string().email(),
-  phone: z.string().regex(/^\d{10}$/,'10 digit number'),
+  phone: z.string().regex(/^\d{10}$/, "10 digit number"),
   gradDate: z.string().optional(),
   campusManager: z.string().optional(),
   promoCode: z.string().optional(),
- agree: z.boolean().refine((v) => v === true, {
-  message: "You must agree to the Terms and Conditions",
-}),
+  // ✅ agree can be false by default, but must be true to pass validation
+  agree: z.boolean().refine(v => v === true, {
+    message: "You must agree to the Terms and Conditions",
+  }),
+}); // ← make sure this closing `});` is present
 
-type FormData = z.infer<typeof FormSchema>
+type FormData = z.infer<typeof FormSchema>;
+
 
 export default function GetStartedPage() {
   const [active, setActive] = useState<(typeof tabs)[number]['key']>('ai')
