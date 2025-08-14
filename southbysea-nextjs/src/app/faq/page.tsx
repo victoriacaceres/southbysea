@@ -1,0 +1,1 @@
+export default function FAQ(){return (<div className='container py-10'><h1 className='text-3xl font-display mb-6'>FAQ</h1><p className='text-black/70'>This content is managed via backend admin. (Stub placeholder)</p></div>)}

@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-primary: #27A6FF;
+  --brand-text: #201C1D;
+  --brand-bg: #F2F2EA;
+  --brand-accent: #BBE1FF;
+}
+
+html, body { @apply bg-brand-bg text-brand-text font-body; }
+a { @apply hover:opacity-80 transition-opacity; }
+
+.btn-primary { @apply inline-flex items-center justify-center rounded-xl2 px-5 py-3 text-white bg-brand-primary font-medium shadow-soft; }
+.btn-outline { @apply inline-flex items-center justify-center rounded-xl2 px-5 py-3 border border-brand-text text-brand-text; }
+
+.card { @apply bg-white rounded-xl2 shadow-soft border border-black/5; }
+.header-link { @apply text-sm md:text-base font-medium; }

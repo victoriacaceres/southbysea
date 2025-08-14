@@ -1,0 +1,1 @@
+export const fmtMoney = (n: number) => { if (Number.isNaN(n)) return "$0.00"; return n.toLocaleString(undefined, { style: 'currency', currency: 'USD' }) }

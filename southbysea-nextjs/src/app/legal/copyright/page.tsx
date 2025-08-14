@@ -1,0 +1,1 @@
+export default function Page(){return (<div className='container py-10'><h1 className='text-3xl font-display mb-6'>Copyright Infringement Takedown</h1><p>Paste your copyright infringement takedown here.</p></div>)}

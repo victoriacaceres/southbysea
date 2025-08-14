@@ -1,0 +1,1 @@
+export default function BrowseDesigns(){return (<div className='container py-10'><h1 className='text-3xl font-display mb-6'>Browse Designs</h1><p className='text-black/70'>This gallery is managed by the admin panel. For now, use <strong>Get Started → Browse a Design</strong> to attach items to your request.</p></div>)}

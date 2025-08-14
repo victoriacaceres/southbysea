@@ -1,0 +1,1 @@
+export default function Support(){return (<div className='container py-8'><div className='aspect-[16/9] card overflow-hidden'><iframe className='w-full h-full' src='https://www.tfaforms.com/5082152' title='Fast Support'></iframe></div></div>)}

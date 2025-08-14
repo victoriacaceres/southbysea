@@ -1,0 +1,1 @@
+export function businessDaysBetween(start: Date, end: Date) { let c=0; const d=new Date(start); d.setHours(0,0,0,0); const e=new Date(end); e.setHours(0,0,0,0); while(d<=e){ const day=d.getDay(); if(day!==0&&day!==6)c++; d.setDate(d.getDate()+1);} return c }
