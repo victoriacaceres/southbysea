@@ -38,8 +38,9 @@ const FormSchema = z.object({
   gradDate: z.string().optional(),
   campusManager: z.string().optional(),
   promoCode: z.string().optional(),
-  agree: z.literal(true, { errorMap: () => ({ message: 'You must agree to the Terms and Conditions' }) }),
-})
+ agree: z.boolean().refine((v) => v === true, {
+  message: "You must agree to the Terms and Conditions",
+}),
 
 type FormData = z.infer<typeof FormSchema>
 
@@ -230,8 +231,8 @@ export default function GetStartedPage() {
               </div>
 
               <label className="inline-flex items-center gap-2 text-sm">
-                <input type="checkbox" {...register('agree')} />
-                I agree to the <a className="underline" href="/legal/terms" target="_blank">Terms and Conditions</a>
+                <input type="checkbox" {...register('')} />
+                I  to the <a className="underline" href="/legal/terms" target="_blank">Terms and Conditions</a>
               </label>
 
               <button type="submit" disabled={!isValid} className={clsx('btn-primary w-full', !isValid && 'opacity-50 cursor-not-allowed')}>Submit</button>
