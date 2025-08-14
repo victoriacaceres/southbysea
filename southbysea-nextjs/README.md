@@ -8,3 +8,4 @@ Ready-to-deploy scaffold for Vercel.
 3) `npm run dev` to run locally.
 4) Push to GitHub and import into Vercel. Add the same env vars in Vercel project settings.
 5) Point your domain.
+
